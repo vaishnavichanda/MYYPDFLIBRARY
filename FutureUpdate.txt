@@ -46,3 +46,62 @@
 
 ## Important Development Rule
 Never delete or replace existing PDF records or Storage files when adding new features. Back up data before database migrations and test changes using existing data.
+
+6. Your development roadmap
+I recommend building in this order:
+1. Phase 1 – Complete the current application
+   - Registration and login
+   - Change and forgot password
+   - Download PDFs
+   - Verify Supabase security
+   - Netlify deployment
+2. Phase 2 – Better PDF organization
+   - Create folders and subfolders
+   - Import entire folders
+   - Move and rename PDFs
+   - Search and filter
+3. Phase 3 – Public launch
+   - Public registration
+   - Email verification
+   - Per-user storage limits
+   - Upload restrictions
+   - Backup and recovery
+   - Error monitoring
+4. Phase 4 – Growth
+   - Database indexes
+   - Pagination
+   - Upload progress and retry
+   - Performance testing
+   - Upgrade infrastructure as needed
+5. Phase 5 – Large-scale application
+   - Read replicas
+   - Larger database compute
+   - Scalable file delivery
+   - Background processing for large folder imports
+   - Advanced monitoring and disaster recovery
+For production, Supabase recommends load testing, database performance checks and backups. One important detail: database backups do not automatically include the actual files in Storage, so we must plan separate file backups too. 
+Supabase Docs+1
+
+
+7. Add this to your FUTURE_UPDATES.md
+## 7. Scalability and Public Application
+
+- [ ] Make MyPDFLibrary available to everyone
+- [ ] Support multiple user accounts
+- [ ] Implement per-user storage limits
+- [ ] Implement secure user-specific access
+- [ ] Add upload size and rate restrictions
+- [ ] Optimize database queries and indexes
+- [ ] Implement pagination for large PDF libraries
+- [ ] Add upload progress and retry
+- [ ] Add independent PDF Storage backups
+- [ ] Monitor database, storage and bandwidth usage
+- [ ] Perform load testing
+- [ ] Plan infrastructure for millions of users
+- [ ] Keep the core application free for users
+- [ ] Explore sustainable funding options
+
+
+My strongest recommendation: Don't build a million-user infrastructure today. Build a secure application for your first 100 users, measure its actual usage, and expand as people start using it.
+
+Your next useful step is to create a public-launch security checklist for your existing MyPDFLibrary, so we can prepare the current version before allowing strangers to register.
