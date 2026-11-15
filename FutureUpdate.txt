@@ -1,0 +1,48 @@
+# MyPDFLibrary – Future Updates & Roadmap
+
+## 1. User Authentication
+- [ ] User registration / Sign Up
+- [ ] Login
+- [ ] Change password
+- [ ] Forgot password
+- [ ] Password reset through email
+- [ ] User profile and account settings
+
+## 2. PDF Management
+- [ ] Upload individual PDFs
+- [ ] View PDFs
+- [ ] Download PDFs
+- [ ] Rename PDFs
+- [ ] Move PDFs between folders
+- [ ] Delete PDFs with confirmation
+
+## 3. Folder Management
+- [ ] Create folders
+- [ ] Create subfolders inside folders
+- [ ] Support multiple folder levels
+- [ ] Rename folders
+- [ ] Delete folders safely
+- [ ] Move folders
+
+## 4. Import Folder
+- [ ] Import an entire folder from computer
+- [ ] Import folders containing subfolders
+- [ ] Preserve original folder structure
+- [ ] Upload all PDFs into the correct folders
+
+## 5. Database & Security
+- [ ] Preserve existing Supabase PDF records
+- [ ] Preserve existing Storage files
+- [ ] Enable and verify database Row Level Security
+- [ ] Configure private Storage access policies
+- [ ] Ensure users can access only their own PDFs
+- [ ] Back up database and Storage before major updates
+
+## 6. Deployment
+- [ ] Connect GitHub to Netlify
+- [ ] Enable automatic deployment
+- [ ] Test the website after every update
+- [ ] Verify existing user data after deployment
+
+## Important Development Rule
+Never delete or replace existing PDF records or Storage files when adding new features. Back up data before database migrations and test changes using existing data.
