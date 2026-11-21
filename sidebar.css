@@ -1,0 +1,118 @@
+/* Sidebar used on every signed-in page. */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 var(--sidebar-width);
+  width: var(--sidebar-width);
+  height: 100vh;
+  padding: 22px 14px;
+  background: var(--primary);
+  color: white;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 22px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-brand .brand-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: bold;
+}
+
+.sidebar-brand strong {
+  display: block;
+  font-size: 15px;
+}
+
+.sidebar-brand span {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-link,
+.sidebar-signout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+}
+
+.sidebar-link:hover,
+.sidebar-signout:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.sidebar-link.active {
+  background: white;
+  color: var(--primary);
+}
+
+.sidebar-icon {
+  width: 22px;
+  text-align: center;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* On small screens the sidebar slides in from the left. */
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-open .sidebar-overlay {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    background: rgba(20, 24, 40, 0.45);
+  }
+}

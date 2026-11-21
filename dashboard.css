@@ -1,0 +1,44 @@
+/* Dashboard page only. */
+
+.dashboard-section {
+  margin-bottom: 34px;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.chip-count {
+  padding: 2px 8px;
+  border-radius: 30px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 11px;
+}
+
+.chip-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}

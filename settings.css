@@ -1,0 +1,36 @@
+/* Settings page only. */
+
+.panel-text {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+}
+
+.settings-form label {
+  margin: 12px 0 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.settings-form input {
+  min-height: 45px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.settings-form .status-message {
+  margin: 12px 0;
+}
+
+.settings-form .primary-btn {
+  align-self: flex-start;
+}

@@ -1,0 +1,62 @@
+/* Subjects page only. */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.toolbar input[type="search"] {
+  flex: 1 1 230px;
+}
+
+.toolbar input,
+.toolbar select {
+  min-width: 0;
+  min-height: 45px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.toolbar select {
+  flex: 0 1 180px;
+}
+
+.upload-label {
+  white-space: nowrap;
+}
+
+.folder-card {
+  text-align: left;
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.folder-card:hover {
+  border-color: var(--primary);
+}
+
+.back-btn {
+  margin-bottom: 16px;
+}
+
+.privacy-note {
+  margin-top: 28px;
+  padding: 15px;
+  border-radius: 11px;
+  background: var(--primary-light);
+  color: #45537d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 580px) {
+  .toolbar > * {
+    flex: 1 1 100%;
+  }
+}

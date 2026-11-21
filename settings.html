@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings · My PDF Library</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="settings.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="common.js" defer></script>
+  <script src="sidebar.js" defer></script>
+  <script src="settings.js" defer></script>
+</head>
+<body data-page="settings">
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <div class="app-content">
+      <header class="page-header">
+        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open menu">☰</button>
+        <div>
+          <h1>Settings</h1>
+          <p>Manage your password and session.</p>
+        </div>
+      </header>
+
+      <main id="pageMain" class="container" hidden>
+        <section class="panel">
+          <h2>Change password</h2>
+          <p class="panel-text">Choose a new password for your account.</p>
+
+          <form id="passwordForm" class="settings-form">
+            <label for="newPasswordInput">New password</label>
+            <input id="newPasswordInput" type="password" minlength="6"
+                   autocomplete="new-password" required>
+
+            <label for="confirmPasswordInput">Confirm new password</label>
+            <input id="confirmPasswordInput" type="password" minlength="6"
+                   autocomplete="new-password" required>
+
+            <p id="passwordMessage" class="status-message" role="status"></p>
+
+            <button id="savePasswordBtn" class="primary-btn" type="submit">
+              Update password
+            </button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Session</h2>
+          <p class="panel-text">Sign out of My PDF Library on this device.</p>
+          <button id="signOutBtn" class="secondary-btn" type="button">Sign out</button>
+        </section>
+      </main>
+
+      <div id="loadingScreen" class="loading-screen">
+        Checking your sign-in...
+      </div>
+    </div>
+  </div>
+</body>
+</html>

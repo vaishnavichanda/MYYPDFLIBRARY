@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects · My PDF Library</title>
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="subjects.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="common.js" defer></script>
+  <script src="sidebar.js" defer></script>
+  <script src="subjects.js" defer></script>
+</head>
+<body data-page="subjects">
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <div class="app-content">
+      <header class="page-header">
+        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open menu">☰</button>
+        <div>
+          <h1>Subjects</h1>
+          <p>Upload, organize and open your PDFs.</p>
+        </div>
+      </header>
+
+      <main id="pageMain" class="container" hidden>
+        <div class="toolbar">
+          <input id="searchInput" type="search" placeholder="Search PDFs..." aria-label="Search PDFs">
+
+          <select id="categoryFilter" aria-label="Filter by subject">
+            <option value="All">All subjects</option>
+          </select>
+
+          <select id="sortSelect" aria-label="Sort PDFs">
+            <option value="newest">Recently added</option>
+            <option value="az">Name A–Z</option>
+            <option value="size">Largest file</option>
+          </select>
+
+          <label class="primary-btn upload-label" for="fileInput">+ Add PDFs</label>
+          <input id="fileInput" type="file" accept=".pdf,application/pdf" multiple hidden>
+        </div>
+
+        <p id="statusMessage" class="status-message" role="status"></p>
+
+        <section class="library-section">
+          <div class="section-heading">
+            <div>
+              <h2 id="sectionTitle">Your subject folders</h2>
+              <p id="resultText">Your cloud PDFs will appear here.</p>
+            </div>
+            <button id="addSubjectBtn" class="secondary-btn" type="button">
+              + Add Subject
+            </button>
+          </div>
+
+          <div id="subjectFolders" class="pdf-grid"></div>
+          <div id="pdfGrid" class="pdf-grid"></div>
+
+          <div id="emptyState" class="empty-state" hidden>
+            <div class="empty-icon">📚</div>
+            <h3>Your library is ready</h3>
+            <p>Upload your first PDF to start building your personal library.</p>
+            <label class="primary-btn upload-label" for="fileInput">Choose PDF files</label>
+          </div>
+        </section>
+
+        <p class="privacy-note">
+          Your PDFs are stored in a private Supabase bucket. Keep your account
+          credentials private. Access must also be restricted by Supabase
+          database and storage policies.
+        </p>
+      </main>
+
+      <div id="loadingScreen" class="loading-screen">
+        Checking your sign-in...
+      </div>
+    </div>
+  </div>
+</body>
+</html>

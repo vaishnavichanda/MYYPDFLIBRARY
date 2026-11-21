@@ -1,0 +1,136 @@
+/* Profile page only. */
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile-card h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.muted-text {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.detail-list {
+  margin: 14px 0 0;
+}
+
+.detail-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.detail-list > div:last-child {
+  border-bottom: 0;
+}
+
+.detail-list dt {
+  color: var(--muted);
+}
+
+.detail-list dd {
+  margin: 0;
+  font-weight: bold;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.storage-bar {
+  height: 12px;
+  margin: 18px 0 8px;
+  border-radius: 20px;
+  background: #e8ecf7;
+  overflow: hidden;
+}
+
+.storage-fill {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--primary);
+  transition: width 0.4s ease;
+}
+
+.storage-fill.full {
+  background: var(--danger);
+}
+
+.storage-text {
+  margin: 0 0 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.breakdown-title {
+  margin: 4px 0 14px;
+  font-size: 16px;
+}
+
+.breakdown-row {
+  margin-bottom: 14px;
+}
+
+.breakdown-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.breakdown-head span:last-child {
+  color: var(--muted);
+}
+
+.breakdown-track {
+  height: 8px;
+  border-radius: 20px;
+  background: #e8ecf7;
+  overflow: hidden;
+}
+
+.breakdown-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: var(--primary);
+}
+
+.breakdown-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 580px) {
+  .detail-list > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .detail-list dd {
+    text-align: left;
+  }
+}
