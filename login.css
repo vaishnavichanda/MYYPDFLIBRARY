@@ -74,6 +74,10 @@ body {
   gap: 10px;
 }
 
+.auth-form [hidden] {
+  display: none !important;
+}
+
 .auth-form label {
   margin-top: 5px;
   font-size: 13px;
@@ -117,6 +121,23 @@ body {
   cursor: not-allowed;
 }
 
+.auth-form .text-button {
+  min-height: auto;
+  margin: 2px 0 0;
+  padding: 7px;
+  background: transparent;
+  color: var(--primary);
+  font-size: 13px;
+}
+
+.auth-form .text-button:hover {
+  background: #f5f7ff;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 .message {
   min-height: 20px;
   margin: 15px 0 0;
@@ -124,6 +145,22 @@ body {
   font-size: 13px;
   line-height: 1.5;
   overflow-wrap: anywhere;
+}
+
+.auth-switch {
+  margin: 14px 0 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+.auth-switch a {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
 }
 
 .privacy-text {

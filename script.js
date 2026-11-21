@@ -418,6 +418,26 @@ pdfGrid.addEventListener("click", async event => {
   if (!pdf || !currentUser) return;
 
   if (button.dataset.action === "open") {
+    const openedWindow = window.open("", "_blank");
+
+    if (!openedWindow) {
+      showStatus(
+        "Your browser blocked the PDF window. Allow pop-ups and try again.",
+        "error"
+      );
+      return;
+    }
+
+    openedWindow.opener = null;
+    openedWindow.document.title = pdf.name;
+    openedWindow.document.body.style.margin = "0";
+    const viewer = openedWindow.document.createElement("iframe");
+    viewer.title = pdf.name;
+    viewer.style.width = "100vw";
+    viewer.style.height = "100vh";
+    viewer.style.border = "0";
+    openedWindow.document.body.appendChild(viewer);
+
     try {
       button.disabled = true;
 
@@ -428,19 +448,9 @@ pdfGrid.addEventListener("click", async event => {
 
       if (error) throw error;
 
-      const openedWindow = window.open(
-        data.signedUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
-
-      if (!openedWindow) {
-        showStatus(
-          "Your browser blocked the PDF window. Allow pop-ups and try again.",
-          "error"
-        );
-      }
+      viewer.src = data.signedUrl;
     } catch (error) {
+      openedWindow.close();
       showStatus(`Could not open PDF: ${error.message}`, "error");
     } finally {
       button.disabled = false;

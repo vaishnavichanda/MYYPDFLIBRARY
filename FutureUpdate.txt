@@ -105,3 +105,11 @@ Supabase Docs+1
 My strongest recommendation: Don't build a million-user infrastructure today. Build a secure application for your first 100 users, measure its actual usage, and expand as people start using it.
 
 Your next useful step is to create a public-launch security checklist for your existing MyPDFLibrary, so we can prepare the current version before allowing strangers to register.
+
+
+That is a much more practical starting model for MyPDFLibrary.
+
+Your proposed pricing:
+- First 1 GB: Free for every registered user.
+- Additional storage: ₹1 for every extra GB.
+- Example: A user storing 5 GB pays ₹4.

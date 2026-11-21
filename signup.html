@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | My PDF Library</title>
+  <link rel="stylesheet" href="signup.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="signup.js" defer></script>
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-card">
+      <div class="login-logo">PDF</div>
+
+      <h1>Create your account</h1>
+      <p class="subtitle">Sign up to start your personal PDF library.</p>
+
+      <form id="signupForm" class="auth-form">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="new-password"
+          required
+        >
+
+        <label for="confirmPassword">Confirm password</label>
+        <input
+          id="confirmPassword"
+          name="confirmPassword"
+          type="password"
+          autocomplete="new-password"
+          required
+        >
+
+        <button id="signupButton" type="submit">Create account</button>
+      </form>
+
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+
+      <p class="auth-switch">
+        Already have an account? <a href="login.html">Sign in</a>
+      </p>
+
+      <p class="privacy-text">
+        Your account is managed securely by Supabase. Keep your password private.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
